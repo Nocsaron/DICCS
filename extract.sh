@@ -33,7 +33,9 @@ do
 done < $1
 
 
-echo $zone
+#echo $zone
+epsg=${zone##*G: }
+epsg=${epsg%%]*}
 xmin=${xmin##*: }
 xmax=${xmax##*: }
 ymin=${ymin##*: }
@@ -41,11 +43,12 @@ ymax=${ymax##*: }
 zone=${zone##*UTM }
 zone=${zone%% *}
 zone=${zone:1}
-hemi=${zone:2}
+zlet=${zone:2}
 zone=${zone%?}
-echo "XMIN: $xmin"
-echo "XMAX: $xmax"
-echo "YMIN: $ymin"
-echo "YMAX: $ymax"
-echo $zone 
-echo $hemi
+#echo "XMIN: $xmin"
+#echo "XMAX: $xmax"
+#echo "YMIN: $ymin"
+#echo "YMAX: $ymax"
+#echo "ZONE: $zone"
+#echo "ZONE LETTER: $zlet"
+echo "EPSG:$epsg"

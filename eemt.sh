@@ -12,12 +12,19 @@ daymet=$2
 s_srs=$(./extract.sh $2)
 t_srs="EPSG:4326"
 
-#warp
-gdalwarp -overwrite -s_srs $s_srs -t_srs $t_srs -r bilinear -of GTiff $1 test_output
 
-#r.slope.aspect
+g.proj -c proj4="+proj=lcc +lat_1=25 +lat_2=60 +lat_0=42.5 +lon_0=-100 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
+#warp
+
+gdalwarp -overwrite -s_srs EPSG:26911 -t_srs "+proj=lcc +lat_1=25 +lat_2=60 +lat_0=42.5 +lon_0=-100 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs" -r bilinear -of GTiff $1 test_output
+#gdalwarp -overwrite -s_srs $s_srs -t_srs $t_srs -r bilinear -of GTiff $1 test_output
+
+#import all rasters
 r.in.gdal input=test_output output=raster --overwrite
+#r.slope.aspect
 r.slope.aspect elevation=raster slope=slope aspect=aspect --overwrite
+
+
 #sun
 echo "Computing r.sun...."
 i=1
@@ -137,3 +144,13 @@ r.series input=`g.mlist rast pattern="diffuseirrad_(33[5-9]|33[0-9]|34[0-9]|35[0
 
 #Cleanup
 g.mremove -f rast=*_[0-9]*
+
+#  r.mapcalc "tmin_loc=tmin-lapse_rate/1000*(dem_10m-dem_1Km)"
+#  r.mapcalc "output  =tmin - 6.49/1000 * (open - daymet)
+
+r.external input="/$HOME/professional/ista/midterm/DAYMET/NA_DEM/na_dem.tif" band=1 output=nadem --overwrite -o -r
+r.external input="/$HOME/professional/ista/midterm/DAYMET/tmax_allyrs/tmax_2012_jul.tif" band=1 output=tmax
+g.region n=-392890.905618 s=-395838.458774 e=-1604354.09111 w=-1608041.12419 res=10
+r.mapcalculator amap=raster bmap=nadem cmap=tmax formula="C-5.69/1000*(A-B)" outfile=outfile72e4319c62ea432cae1baf82b1f66201 --overwrite
+g.region rast=outfile72e4319c62ea432cae1baf82b1f66201
+r.out.gdal -c createopt="TFW=YES,COMPRESS=LZW" input=outfile72e4319c62ea432cae1baf82b1f66201 output=test.out

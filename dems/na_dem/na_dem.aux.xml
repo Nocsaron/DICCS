@@ -1,0 +1,10 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>na_dem</Description>
+    <NoDataValue>-3.27680000000000E+004</NoDataValue>
+    <GDALRasterAttributeTable/>
+    <Metadata>
+      <MDI key="LAYER_TYPE">athematic</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

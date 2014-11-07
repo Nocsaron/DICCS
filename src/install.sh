@@ -15,7 +15,7 @@ echo 'export PYTHONPATH="$GISBASE/etc/python"' >> $HOME/.bashrc
 echo "export SHELL=/bin/bash" >> $HOME/.bashrc
 
 #Creat GRASS config file
-echo 'GISBASE: $HOME/midterm' >> $HOME/.grassrc6
+echo 'GISDBASE: $HOME/midterm' >> $HOME/.grassrc6
 echo 'LOCATION_NAME: location' >> $HOME/.grassrc6
 echo 'MAPSET: PERMANENT' >> $HOME/.grassrc6
 echo 'DIGITIZER: none' >> $HOME/.grassrc6

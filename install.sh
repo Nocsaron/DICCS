@@ -11,8 +11,8 @@ sudo apt-get -y install libssl0.9.8
 
 #Install R
 sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
-#sudo apt-get -y update
-sudo apt-get -y install r-base
+sudo apt-get -y update
+sudo apt-get -y --force-yes install r-base
 
 #Install R Packages
 cd ../daymetr

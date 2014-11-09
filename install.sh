@@ -11,8 +11,8 @@ sudo apt-get -y install libssl0.9.8
 
 #Install R
 sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
-sudo apt-get -y update
-sudo apt-get install r-base
+#sudo apt-get -y update
+sudo apt-get -y install r-base
 
 #Install R Packages
 cd ../daymetr
@@ -28,10 +28,8 @@ cd cctools-4.2.2-source
 ./configure 
 make
 make install
-export PATH=${PATH}:${HOME}/cctools/bin
 cd ..
 rm cctools-4.2.2-source.tar.gz
-cd $HOME
 
 #Add commands to path
 echo "export GISBASE="/usr/lib/grass64"" >> $HOME/.bashrc
@@ -40,6 +38,7 @@ echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$GISBASE/lib"' >> $HOME/.bashrc
 echo "export GISRC=~/.grassrc6" >> $HOME/.bashrc
 echo 'export PYTHONPATH="$GISBASE/etc/python"' >> $HOME/.bashrc
 echo "export SHELL=/bin/bash" >> $HOME/.bashrc
+echo "export PATH=${PATH}:${HOME}/cctools/bin" >> $HOME/.bashrc
 
 #Creat GRASS config file
 echo 'GISDBASE: $HOME/midterm' >> $HOME/.grassrc6

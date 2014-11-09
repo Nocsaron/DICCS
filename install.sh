@@ -1,5 +1,6 @@
 #!/bin/bash
 
+printf "function on_usr ()\n{\nsource ~/.bashrc\n}\ntrap on_usr SIGUSR1\n" >> $HOME/.bashrc
 #Install QGIS, GRASS, GDAL
 sudo apt-get -y update
 sudo apt-get -y install qgis python-qgis
@@ -40,9 +41,17 @@ echo 'export PYTHONPATH="$GISBASE/etc/python"' >> $HOME/.bashrc
 echo "export SHELL=/bin/bash" >> $HOME/.bashrc
 echo 'export PATH="$PATH:${HOME}/cctools/bin"' >> $HOME/.bashrc
 
+
+#printf "function on_usr ()\n{\nsource ~/.bashrc\n}\ntrap on_usr SIGUSR1\n" >> $GOME/.bashrc
+
+
 #Creat GRASS config file
 echo "GISDBASE: `pwd`" >> $HOME/.grassrc6
 echo 'LOCATION_NAME: location' >> $HOME/.grassrc6
 echo 'MAPSET: PERMANENT' >> $HOME/.grassrc6
 echo 'DIGITIZER: none' >> $HOME/.grassrc6
 echo 'GRASS_GUI: text' >> $HOME/.grassrc6
+
+
+source $HOME/.bashrc
+kill -USR1 $PPID

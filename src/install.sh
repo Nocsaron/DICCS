@@ -6,6 +6,11 @@ sudo apt-get install qgis python-qgis
 sudo apt-get install qgis-plugin-grass
 sudo apt-get install grass-dev
 
+#Get and install iCommands
+wget ftp://ftp.renci.org/pub/irods/releases/4.0.3/irods-icommands-4.0.3-64bit.deb
+
+sudo dpkg -i ftp://ftp.renci.org/pub/irods/releases/4.0.3/irods-icommands-4.0.3-64bit.deb
+
 #Add commands to path
 echo "export GISBASE="/usr/lib/grass64"" >> $HOME/.bashrc
 echo 'export PATH="$PATH:$GISBASE/bin:$GISBASE/scripts"' >> $HOME/.bashrc

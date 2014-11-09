@@ -9,9 +9,19 @@ sudo apt-get -y install grass-dev
 #Get and install iCommands
 sudo apt-get -y install libssl0.9.8
 
-wget ftp://ftp.renci.org/pub/irods/releases/4.0.3/irods-icommands-4.0.3-64bit.deb
+#Install R
+sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
+sudo apt-get -y update
+sudo apt-get install r-base
 
-sudo dpkg -i irods-icommands-4.0.3-64bit.deb
+#Install R Packages
+cd ../daymetr
+sudo R CMD INSTALL sp_1.0-16.tar.gz
+sudo R CMD INSTALL rgeo_0.3-8.tar.gz
+sudo R CMD INSTALL rgdal_0.9-1.tar.gz
+sudo R CMD INSTALL DaymetR.tar.gz
+
+
 
 #Add commands to path
 echo "export GISBASE="/usr/lib/grass64"" >> $HOME/.bashrc

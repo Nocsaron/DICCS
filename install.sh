@@ -47,4 +47,4 @@ echo 'MAPSET: PERMANENT' >> $HOME/.grassrc6
 echo 'DIGITIZER: none' >> $HOME/.grassrc6
 echo 'GRASS_GUI: text' >> $HOME/.grassrc6
 
-source ~/.bashrc
+source $HOME/.bashrc

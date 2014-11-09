@@ -21,7 +21,17 @@ sudo R CMD INSTALL rgeo_0.3-8.tar.gz
 sudo R CMD INSTALL rgdal_0.9-1.tar.gz
 sudo R CMD INSTALL DaymetR.tar.gz
 
-
+#Install Makeflow
+wget http://ccl.cse.nd.edu/software/files/cctools-4.2.2-source.tar.gz
+tar xvzf cctools-4.2.2-source.tar.gz
+cd cctools-4.2.2-source
+./configure 
+make
+make install
+export PATH=${PATH}:${HOME}/cctools/bin
+cd ..
+rm cctools-4.2.2-source.tar.gz
+cd $HOME
 
 #Add commands to path
 echo "export GISBASE="/usr/lib/grass64"" >> $HOME/.bashrc

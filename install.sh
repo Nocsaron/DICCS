@@ -38,7 +38,7 @@ echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$GISBASE/lib"' >> $HOME/.bashrc
 echo "export GISRC=~/.grassrc6" >> $HOME/.bashrc
 echo 'export PYTHONPATH="$GISBASE/etc/python"' >> $HOME/.bashrc
 echo "export SHELL=/bin/bash" >> $HOME/.bashrc
-echo "export PATH=${PATH}:${HOME}/cctools/bin" >> $HOME/.bashrc
+echo 'export PATH="$PATH:${HOME}/cctools/bin"' >> $HOME/.bashrc
 
 #Creat GRASS config file
 echo 'GISDBASE: $HOME/midterm' >> $HOME/.grassrc6

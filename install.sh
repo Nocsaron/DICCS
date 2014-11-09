@@ -17,7 +17,7 @@ sudo apt-get -y --force-yes install r-base
 #Install R Packages
 cd daymetr
 sudo R CMD INSTALL sp_1.0-16.tar.gz
-sudo R CMD INSTALL rgeo_0.3-8.tar.gz
+sudo R CMD INSTALL rgeos_0.3-8.tar.gz
 sudo R CMD INSTALL rgdal_0.9-1.tar.gz
 sudo R CMD INSTALL DaymetR.tar.gz
 

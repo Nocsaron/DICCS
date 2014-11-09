@@ -1,15 +1,17 @@
 #!/bin/bash
 
 #Install QGIS, GRASS, GDAL
-sudo apt-get update
-sudo apt-get install qgis python-qgis
-sudo apt-get install qgis-plugin-grass
-sudo apt-get install grass-dev
+sudo apt-get -y update
+sudo apt-get -y install qgis python-qgis
+sudo apt-get -y install qgis-plugin-grass
+sudo apt-get -y install grass-dev
 
 #Get and install iCommands
+sudo apt-get -y install libssl0.9.8
+
 wget ftp://ftp.renci.org/pub/irods/releases/4.0.3/irods-icommands-4.0.3-64bit.deb
 
-sudo dpkg -i ftp://ftp.renci.org/pub/irods/releases/4.0.3/irods-icommands-4.0.3-64bit.deb
+sudo dpkg -i irods-icommands-4.0.3-64bit.deb
 
 #Add commands to path
 echo "export GISBASE="/usr/lib/grass64"" >> $HOME/.bashrc

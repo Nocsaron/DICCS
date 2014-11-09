@@ -15,7 +15,7 @@ sudo apt-get -y update
 sudo apt-get -y --force-yes install r-base
 
 #Install R Packages
-cd ../daymetr
+cd daymetr
 sudo R CMD INSTALL sp_1.0-16.tar.gz
 sudo R CMD INSTALL rgeo_0.3-8.tar.gz
 sudo R CMD INSTALL rgdal_0.9-1.tar.gz
@@ -46,4 +46,3 @@ echo 'LOCATION_NAME: location' >> $HOME/.grassrc6
 echo 'MAPSET: PERMANENT' >> $HOME/.grassrc6
 echo 'DIGITIZER: none' >> $HOME/.grassrc6
 echo 'GRASS_GUI: text' >> $HOME/.grassrc6
-

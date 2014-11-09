@@ -22,8 +22,8 @@ r.slope.aspect elevation=warped slope=slope aspect=aspect --overwrite
 #Import and average DAYMET DEMS
 echo "Importing daily DAYMET DEMs"
 
-echo "Importing National DEM"
-r.external input="../dems/na_dem/na_dem.tif" band=1 output=na_dem --overwrite -r
+#echo "Importing National DEM"
+#r.external input="../dems/na_dem/na_dem.tif" band=1 output=na_dem --overwrite -r
 
 declare -a files=( dayl prcp srad swe tmax tmin vp )
 for f in "${files[@]}"

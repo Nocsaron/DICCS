@@ -25,11 +25,13 @@ r.slope.aspect elevation=warped slope=slope aspect=aspect --overwrite
 
 #Compute Sun Values for all days and average into months
 #./sun.sh
-#Create Sun/Series makeflow files
+#Create Sun makeflow files
 ./makeflow_sun.sh
-torque_submit_workers \-N sol 10
-makeflow \-T wq sun.mf \-a \-N sol \--email="nrcallahan@email.arizona.edu" 
+time makeflow sun.mf -N sol -J 15 > sun.mf.time
+./makeflow_series.sh
+time makeflow series.mf -N sol -J 15 > series.mf.time
 
+exit
 #Import and average DAYMET DEMS
 echo "Importing daily DAYMET DEMs"
 

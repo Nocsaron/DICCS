@@ -27,9 +27,11 @@ r.slope.aspect elevation=warped slope=slope aspect=aspect --overwrite
 #./sun.sh
 #Create Sun makeflow files
 ./makeflow_sun.sh
-time makeflow sun.mf -N sol -J 15 > sun.mf.time
+makeflow -T wq sun.mf -N ACIC3 -J 15 -p 5550
+
 ./makeflow_series.sh
-time makeflow series.mf -N sol -J 15 > series.mf.time
+cd  ../location/PERMANENT/cell/
+makeflow series.mf -N ACIC3 -J 15 -p 5550
 
 exit
 #Import and average DAYMET DEMS

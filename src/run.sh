@@ -24,8 +24,16 @@ g.region rast=warped
 r.slope.aspect elevation=warped slope=slope aspect=aspect --overwrite
 
 #Compute Sun Values for all days and average into months
-./sun.sh
+#./sun.sh
+#Create Sun makeflow files
+./makeflow_sun.sh
+makeflow -T wq sun.mf -N ACIC3 -J 15 -p 5550
 
+./makeflow_series.sh
+cd  ../location/PERMANENT/cell/
+makeflow series.mf -N ACIC3 -J 15 -p 5550
+
+exit
 #Import and average DAYMET DEMS
 echo "Importing daily DAYMET DEMs"
 

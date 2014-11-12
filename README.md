@@ -15,7 +15,7 @@ Instructions:
 
 Executing
 ---------
-Once installed simply run Sol, giving it the path to your OpenTopo DEM, and OpenTopo Metadata File
+Once installed simply run Sol from the DICCS directory, giving it the path to your OpenTopo DEM, and OpenTopo Metadata File
 
 Note:  Currently Sol only works if you add workers.  In the future Sol will give you the option to be massively distributed or not.
 

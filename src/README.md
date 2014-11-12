@@ -1,8 +1,8 @@
 getTiles.sh
 ----------
-run.sh
+run.sh <code>run.sh [OpenTopo DEM]</code>
 -----------
-<code>run.sh [OpenTopo DEM]</code>
+
 <p>run.sh is the meat and potatoes of Sol. 
 
 clean.sh

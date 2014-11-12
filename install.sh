@@ -40,6 +40,7 @@ echo "export GISRC=~/.grassrc6" >> $HOME/.bashrc
 echo 'export PYTHONPATH="$GISBASE/etc/python"' >> $HOME/.bashrc
 echo "export SHELL=/bin/bash" >> $HOME/.bashrc
 echo 'export PATH="$PATH:${HOME}/cctools/bin"' >> $HOME/.bashrc
+echo "export PATH=$PATH:`pwd`" >> $HOME/.bashrc
 
 
 #printf "function on_usr ()\n{\nsource ~/.bashrc\n}\ntrap on_usr SIGUSR1\n" >> $GOME/.bashrc

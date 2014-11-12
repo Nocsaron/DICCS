@@ -1,6 +1,6 @@
 getTiles.sh [OpenTopo Metadata File] [Start Year] [End Year]
 ----------
-<p> getTiles.sh is the first script called in sol.s.  It takes the metadata file of the OpenTopo DEM and reads in the xmin,xman,ymin,and ymax, as well as the epsg/zone data that goes with it.  We then use OpenTopography's LidarPortlet projection.jsp to convert those min's and max's into the lat and long coordinates for each of the corners of the selected projection. Lastly, it gets all the DAYMET data for all the specified years and outputs it into the getDaymet.r file in the dems folder.
+<p> getTiles.sh is the first script called in sol.s.  It takes the metadata file of the OpenTopo DEM and reads in the xmin,xman,ymin,and ymax, as well as the epsg/zone data that goes with it.  We then use OpenTopography's LidarPortlet projection.jsp to convert those min's and max's into the lat and long coordinates for each of the corners of the selected projection. Lastly, it gets all the DAYMET data for all the specified years and outputs it into the getDaymet.r file in the dems folder.</p>
 
 run.sh [OpenTopo DEM]
 -----------
@@ -13,15 +13,15 @@ clean.sh
 
 makeflow_sun.sh
 ---------------
-makeflow_sun.sh is called by run to create the necessary files for makeflow to work correctly. Specifically this script create the Makeflow files to compute the daily Solar Irradiance and Irradiation Models.
+<p>makeflow_sun.sh is called by run to create the necessary files for makeflow to work correctly. Specifically this script create the Makeflow files to compute the daily Solar Irradiance and Irradiation Models.</p>
 
 makeflow_series.sh
 ------------------
-makeflow_series.sh is called by run to create the necessary files for makeflow to work correctly. Specifically this script create the Makeflow files to compute the monthly Solar Irradiance and Irradiation Model averages.
+<p>makeflow_series.sh is called by run to create the necessary files for makeflow to work correctly. Specifically this script create the Makeflow files to compute the monthly Solar Irradiance and Irradiation Model averages.</p>
 
 locallycorrectedtemp.sh [MONTH]
 -----------------------
 
-Note: the argument month must be in the form: january, february, march, april, may, june, july, august, september, october, november, or december
+<p>Note: the argument month must be in the form: january, february, march, april, may, june, july, august, september, october, november, or december</p>
 
-locallycorrectedtemp.sh is the script called by run.sh to compute the Locally Correct Tempurature for the given moneht
+<p>locallycorrectedtemp.sh is the script called by run.sh to compute the Locally Correct Tempurature for the given month</p>

@@ -10,6 +10,7 @@ run.sh [OpenTopo DEM]
 
 clean.sh
 ----------
+<p> Deletes EVERYTHING.  
 
 makeflow_sun.sh
 ---------------

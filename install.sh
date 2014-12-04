@@ -9,6 +9,9 @@ sudo apt-get -y install grass-dev
 
 #Get and install iCommands
 sudo apt-get -y install libssl0.9.8
+wget ftp://ftp.renci.org/pub/irods/releases/4.0.3/irods-icommands-4.0.3-64bit.deb
+sudo dpkg -i irods-icommands-4.0.3-64bit.deb
+sudo apt-get -f install
 
 #Install R
 sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list

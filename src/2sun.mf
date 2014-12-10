@@ -1,0 +1,4 @@
+CELL="/home/ubuntu/DICCS/location/PERMANENT/cell"
+irrad: ../location/PERMANENT/cell/warped ../location/PERMANENT/cell/aspect ../location/PERMANENT/cell/slope
+     r.sun elevin=warped aspin=aspect slopein=slope step=10 day=1 glob_rad=totalirradiance_1 --overwrite; r.out.gdal input=totalirradiance_1 out=./irrad
+

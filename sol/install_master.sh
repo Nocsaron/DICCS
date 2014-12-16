@@ -46,6 +46,10 @@ sudo R CMD INSTALL sp_1.0-16.tar.gz
 sudo R CMD INSTALL rgeos_0.3-8.tar.gz
 sudo R CMD INSTALL rgdal_0.9-1.tar.gz
 sudo R CMD INSTALL DaymetR.tar.gz
+rm sp_1.0-16.tar.gz
+rm rgeos_0.3-8.tar.gz
+rm rgdal_0.9-1.tar.gz
+
 
 #Install Makeflow
 wget http://ccl.cse.nd.edu/software/files/cctools-4.2.2-source.tar.gz

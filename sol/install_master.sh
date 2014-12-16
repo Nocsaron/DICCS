@@ -13,6 +13,10 @@ cp monthly_sun.mk $HOME/.sol/src
 cp EEMT* $HOME/.sol/src
 cp sol_master.sh $HOME/.sol/bin
 cp sol_worker.sh $HOME/.sol/bin
+cp output.den.tif $HOME/.sol/dems
+cp meta* $HOME/.sol/
+cp meta* $HOM
+chown -R $SUDO_USER $HOME/.sol
 mkdir $HOME/.cctools-source
 cd $HOME/.sol
 #Install QGIS, GRASS, GDAL

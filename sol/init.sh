@@ -27,7 +27,7 @@ r.external input=$dem.warped output=warped --overwrite -r
 r.external input="NA_DEM/na_dem.tif" output=dem_1km --overwrite -r
 
 #Import tmax
-r.external input=tmax_$year_$tile.nc band=17 output=tmax_jan --overwrite -r
+r.external input=tmax_${year}_${tile}.nc band=17 output=tmax_jan --overwrite -r
 r.external input=tmax_$year_$tile.nc band=47 output=tmax_feb --overwrite -r
 r.external input=tmax_$year_$tile.nc band=75 output=tmax_march --overwrite -r
 r.external input=tmax_$year_$tile.nc band=105 output=tmax_april --overwrite -r

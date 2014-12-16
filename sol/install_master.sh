@@ -14,8 +14,7 @@ cp EEMT* $HOME/.sol/src
 cp sol_master.sh $HOME/.sol/bin
 cp sol_worker.sh $HOME/.sol/bin
 cp output.den.tif $HOME/.sol/dems
-cp meta* $HOME/.sol/
-cp meta* $HOM
+cp meta* $HOME/.sol/dems
 chown -R $SUDO_USER $HOME/.sol
 mkdir $HOME/.cctools-source
 cd $HOME/.sol
@@ -82,4 +81,3 @@ echo 'DIGITIZER: none' >> $HOME/.grassrc6
 echo 'GRASS_GUI: text' >> $HOME/.grassrc6
 
 cd $HOME/.sol
-

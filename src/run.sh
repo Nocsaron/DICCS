@@ -5,10 +5,13 @@ if [ ! $# -eq 1 ]; then
     exit
 fi;
 
+
+
+
 opentopodem=$1
 
 #Set projection
-g.proj -c epsg=4326
+g.proj -c proj4="+proj=lcc +lat_1=25 +lat_2=60 +lat_0=42.5 +lon_0=-100 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 
 #Warp OpenTopo to valid projection
 gdalwarp -overwrite -s_srs EPSG:26911 -t_srs EPSG:4326 -r bilinear -of GTiff ../dems/$opentopodem ../dems/$opentopodem.warped

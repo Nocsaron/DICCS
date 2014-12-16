@@ -1,5 +1,5 @@
 #!/bin/bash
-source=`pwd`
+source=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 sudo apt-get -y install git
 
 mkdir $HOME/.sol

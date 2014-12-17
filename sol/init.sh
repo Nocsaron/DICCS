@@ -21,7 +21,7 @@ fi;
 mv ../daymetr/*.nc .
 g.proj -c proj4="+proj=lcc +lat_1=25 +lat_2=60 +lat_0=42.5 +lon_0=-100 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 
-gdalwarp -overwrite -s_srs EPSG:26911 -t_srs EPSG:4326 -r bilinear -of GTiff $dem $dem.warped
+gdalwarp -overwrite -s_srs EPSG:26911 -t_srs "+proj=lcc +lat_1=25 +lat_2=60 +lat_0=42.5 +lon_0=-100 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs" -r bilinear -of GTiff $dem $dem.warped
 
 r.external input=$dem.warped output=warped --overwrite -r
 r.external input="NA_DEM/na_dem.tif" output=dem_1km --overwrite -r

@@ -1,2 +1,0 @@
-~/DICCS/location/PERMANENT/cell/test: testa
-     echo testa > ~/DICCS/location/PERMANENT/cell/test

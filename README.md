@@ -10,8 +10,19 @@ Pre-Installation Requirements:
 
 Instructions:
   On a ubuntu system of your choice download the Sol program to your home directory.
-    To instsall Sol Master Node: Run  <code>sudo ./install.mastersh</code>
-    To instsall Sol Worker Node: Run  <code>sudo ./install_worker.sh</code>
+    To install Sol Master Node: Run  
+    <code>
+        sudo ./install.master.sh
+        source ~/.bashrc
+        iinit
+        grass64
+    </code>
+
+    To install Sol Worker Node: Run  
+    <code>
+        sudo ./install_worker.sh
+        grass64
+    </code>
 
 
 Executing

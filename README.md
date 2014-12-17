@@ -6,17 +6,18 @@ Sol is a distributed computation program capable of combining OpenTopography Lid
 Installation
 -------------
 Pre-Installation Requirements:
-    Ubuntu Operating System
+    Debain Operating System
 
 Instructions:
-  On a ubuntu system of your choice (Openstack preffered) download the Sol program to your home directory.
-  Run 
-      <code>"sudo ./install.sh</code>
+  On a ubuntu system of your choice download the Sol program to your home directory.
+    To instsall Sol Master Node: Run  <code>sudo ./install.mastersh</code>
+    To instsall Sol Worker Node: Run  <code>sudo ./install_worker.sh</code>
+
 
 Executing
 ---------
-Once installed simply run Sol from the DICCS directory, giving it the path to your OpenTopo DEM, and OpenTopo Metadata File
+To run the master node simply call <code>sol_master.sh</code>, giving it the path to your OpenTopo DEM, and OpenTopo Metadata File and the year you wish to compute.
 
-Note:  Currently Sol only works if you add workers.  In the future Sol will give you the option to be massively distributed or not.
+To automatically run a Sol Worker call <code>sol_worker.sh</code> for as many workers as you desire. (Note: Exceeding the number of cores you have is highly unrecommended.
 
-To add workers, on any machine with Makeflow/Workqueue installed run <code>work_queue_worker -N ACIC -p 5550</code> as many times as workers as you want.  We recommend 1 worker per processing core. 
+To add workers, on any machine with Makeflow/Workqueue installed run <code>work_queue_worker -N ACIC3 -p 5550</code> as many times as workers as you want.  We recommend 1 worker per processing core. 

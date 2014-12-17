@@ -46,9 +46,6 @@ r.mapcalc E_ppt=F*4185.5*DT*E_bio
 r.mapcalc N=sin(slope)*cos(aspect*0.0174532925)
 r.mapcalc NPP_topo=0.39*dem_10m+346*N-187
 
-#Calculate the E_bio
-r.mapcalc NPP_trad=3000*(1+exp(1.315-0.119*(tmax_loc+tmin_loc)/2)^-1)
-r.mapcalc E_bio=NPP_topo*(22*10^6)
 
 
-#EEMT-Trad = E_bio + E_ppt
+#EEMT-Topo = E_bio + E_ppt

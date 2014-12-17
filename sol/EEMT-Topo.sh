@@ -1,13 +1,14 @@
 #!/bin/bash
 
+month = $1
 
 # inputs DEM 10m from OpenTopo, 1km DEM from of DAYMET data
 
 # break up the two inputs into monthly inputs to do these calculations
 
 #Locally correct the temperature
-r.mapcalc tmin_loc=tmin-0.00649*(dem_10m-dem_1km)
-r.mapcalc tmax_loc=tmax-0.00649*(dem_10m-dem_1km)
+r.mapcalc tmin_loc=tmin_$month-0.00649*(dem_10m-dem_1km)
+r.mapcalc tmax_loc=tmax_$month-0.00649*(dem_10m-dem_1km)
 
 
 
@@ -35,10 +36,10 @@ r.mapcalc f_tmax_topo=6.108*exp((17.27*tmax_topo)/(tmax_topo+237.3))
 r.mapcalc vp_s_topo=(f_tmax_topo+f_tmin_topo)/2 
 r.mapcalc p_a=101325*exp(-9.80665*0.289644*dem_10m/(8.31447*288.15))/287.35*((tmax_topo+tmin_topo/2)273.125)
 r.mapcalc PET=total_sun_joules+p_a*0.001013*(vp_s_topo-vp_loc)/ra))/(2.45*(m_vp+g_psy)
-r.mapcalc AET=prcp*(1+PET/prcp(1(PET/prcp)2.63)(1/2.63))
+r.mapcalc AET=prcp_$month*(1+PET/prcp_$month(1(PET/prcp_$month)2.63)(1/2.63))
 
 #Make the E_ppt
-r.mapcalc F=a_i*prcp
+r.mapcalc F=a_i*prcp_$month
 r.mapcalc DT=((tmax_topo+tmin_topo)/2) - 273.15
 r.mapcalc E_ppt=F*4185.5*DT*E_bio
 
@@ -46,9 +47,7 @@ r.mapcalc E_ppt=F*4185.5*DT*E_bio
 r.mapcalc N=sin(slope)*cos(aspect*0.0174532925)
 r.mapcalc NPP_topo=0.39*dem_10m+346*N-187
 
-#Calculate the E_bio
-r.mapcalc NPP_trad=3000*(1+exp(1.315-0.119*(tmax_loc+tmin_loc)/2)^-1)
 r.mapcalc E_bio=NPP_topo*(22*10^6)
 
 
-#EEMT-Trad = E_bio + E_ppt
+#EEMT-Topo  = E_bio + E_ppt

@@ -5,7 +5,7 @@ cd $HOME/.sol/src
 projectname=ACIC3
 port=5550
 
-r.slope.aspect elevation=warped slope=slope aspect=aspect --overwrite
+r.slope.aspect elevation=dem_10m slope=slope aspect=aspect --overwrite
 
 echo "Distributing solar insulation computations"
 makeflow -T wq monthly_sun.mk -N $projectname -p $port

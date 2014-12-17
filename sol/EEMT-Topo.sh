@@ -7,8 +7,8 @@ month=$1
 # break up the two inputs into monthly inputs to do these calculations
 
 #Locally correct the temperature
-r.mapcalc tmin_loc=tmin_${month}-0.00649*(dem_10m-dem_1km)
-r.mapcalc tmax_loc=tmax_${month}-0.00649*(dem_10m-dem_1km)
+`r.mapcalc tmin_loc=tmin_${month}-0.00649*(dem_10m-dem_1km)`
+`r.mapcalc tmax_loc=tmax_${month}-0.00649*(dem_10m-dem_1km)`
 
 
 

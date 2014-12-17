@@ -13,11 +13,19 @@ Instructions:
     
 To install Sol Master Node run:  
 ```
-sudo ./install.master.sh
+sudo ./install_master.sh
 source ~/.bashrc
 iinit
 grass64
 ```
+
+To install Sol Worker Nodes run:
+```
+sudo ./install_worker.sh
+source ~/.bashrc
+grass64
+```
+
 The initialization parameters for iinit are:
 
 | Item        | Value       |
@@ -27,11 +35,33 @@ The initialization parameters for iinit are:
 | Username | `<your iplant username>` |
 | Password | `<Your iplant passsord>` |
 
+To initialize the grass location first run <code>grass64</code>
+```
+<ESC><ENTER>
+y
+y
+D
+y
+<Enter a 1 line description here>y
+y
+lcc
+y
+wgs84
+<ENTER>
+<ENTER>
+<ESC><ENTER>
+y
+<ENTER>
+<ESC><ENTER>
+exit
+```
+
+
 
     
 Executing
 ---------
-To run the master node simply call <code>sol_master.sh</code>, giving it the path to your OpenTopo DEM, and OpenTopo Metadata File and the year you wish to compute.
+To run the master node simply call <code>`sol_master.sh <DEM> <Metadata> Year`</code>, giving it the path to your OpenTopo DEM, and OpenTopo Metadata File and the year you wish to compute.
 
 To automatically run a Sol Worker call <code>sol_worker.sh</code> for as many workers as you desire. (Note: Exceeding the number of cores you have is highly unrecommended.
 

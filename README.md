@@ -10,21 +10,25 @@ Pre-Installation Requirements:
 
 Instructions:
   On a ubuntu system of your choice download the Sol program to your home directory.
-    To install Sol Master Node: Run  
-    <code>
-        sudo ./install.master.sh
-        source ~/.bashrc
-        iinit
-        grass64
-    </code>
+    
+To install Sol Master Node run:  
+```
+sudo ./install.master.sh
+source ~/.bashrc
+iinit
+grass64
+```
+The initialization parameters for iinit are:
 
-    To install Sol Worker Node: Run  
-    <code>
-        sudo ./install_worker.sh
-        grass64
-    </code>
+| Item        | Value       |
+|:-----------:|:-----------:|
+| Host Server | data.iplantcollaborative.com       |
+| Port | 1247 |
+| Username | `<your iplant username>` |
+| Password | `<Your iplant passsord>` |
 
 
+    
 Executing
 ---------
 To run the master node simply call <code>sol_master.sh</code>, giving it the path to your OpenTopo DEM, and OpenTopo Metadata File and the year you wish to compute.
